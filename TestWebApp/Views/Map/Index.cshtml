@@ -1,0 +1,35 @@
+﻿@page
+@model TestWebApp.Views.Map.IndexModel
+@{
+}
+
+<head>
+    <title>MapMarkerCrafts App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/7.0.0/turf.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/site.js"></script>
+</head>
+
+<body id="body">
+    <div id="map" style="width: 100vw; height: 100vh;">
+        <button id="main-button" onclick="showMenu()">Нарисовать</button>
+    </div>
+
+    <div id="popup" style="height: 0vh;">
+
+        <h1>МЕНЮ:</h1>
+        <div style="display: flex; flex-direction: row;">
+            <button onclick="addPoint(44.05, 41.12)">Маркер</button>
+            <button onclick="addLine()">Линия</button>
+            <button onclick="addPolygon()">Полигон</button>
+            <button onclick="addRectangle()">Прямоугольник</button>
+            <button onclick="saveCoordinates()">Сохранить</button>
+</body>

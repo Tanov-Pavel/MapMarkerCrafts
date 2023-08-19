@@ -1,3 +1,5 @@
+using System.Diagnostics;
+Environment.SetEnvironmentVariable("GEOSERVER_HOME", @"C:\GeoServer");
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,6 +24,15 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=map}/{action=Index}/{id?}");
 
+var geoserverProcess = new Process
+{
+    StartInfo = new ProcessStartInfo
+    {
+        FileName = "cmd",
+        Arguments = "/C start \"GeoServer\" \"C:\\geoserver\\bin\\startup.bat\"",
+    }
+};
+geoserverProcess.Start();
 app.Run();

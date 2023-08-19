@@ -25,6 +25,7 @@ function addPoint() {
             console.log("Обновленные координаты маркера: " + updatedLat + ", " + updatedLon);
         });
     });
+
 }
 function addLine() {
     map.addLayer(drawnItems);
